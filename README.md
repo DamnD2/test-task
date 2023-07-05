@@ -1,1 +1,1 @@
-[https://damnd2.github.io/test-task/]
+https://damnd2.github.io/test-task/
