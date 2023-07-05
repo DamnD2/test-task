@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ErrorPage: FC = () => (
   <StyledWrapper>
     <Typography variant="h5">Oops! Something went wrong.</Typography>
-    <Link to="/">Go to home page</Link>
+    <Link to="/test-task">Go to home page</Link>
   </StyledWrapper>
 );
 
