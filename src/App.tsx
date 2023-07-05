@@ -7,8 +7,8 @@ import { Route, Routes } from "react-router";
 const App = () => (
   <Routes>
     <Route element={<AnimationLayout />}>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/details/:imageName" element={<ImageInfoPage />} />
+      <Route path="/test-task" element={<HomePage />} />
+      <Route path="/test-task/details/:imageName" element={<ImageInfoPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   </Routes>
