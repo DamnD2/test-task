@@ -17,8 +17,10 @@ const ImagesContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
     fetch("https://jsonplaceholder.typicode.com/photos?_start=0&_limit=20")
       .then((response) => response.json())
       .then((json) => {
-        setData(formatImagesData(json));
-        setLoading(false);
+        setTimeout(() => {
+          setData(formatImagesData(json));
+          setLoading(false);
+        }, 1000); // simulating long loading for display skeleton
       });
   }, []);
 

@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
-import { Typography } from "@mui/material";
+import { Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { ImagesContext } from "contexts/ImagesContextProvider";
-import { FC, useContext, useMemo } from "react";
+import { FC, useContext, useMemo, useState } from "react";
 import { redirect, useParams } from "react-router-dom";
 
 const ImageInfoPage: FC = () => {
   const { imageName } = useParams();
   const { imagesData } = useContext(ImagesContext);
+  const [isLoaded, setLoaded] = useState(false);
 
   const currentItem = useMemo(
     () => imagesData.find((item) => item.name === imageName),
@@ -25,7 +26,17 @@ const ImageInfoPage: FC = () => {
 
   return !!currentItem ? (
     <StyledWrapper>
-      <StyledImage src={imageUrl} alt={currentItem.name} />
+      <StyledImageWrapper>
+        {!isLoaded && (
+          <Skeleton variant="rectangular" width={500} height={500} />
+        )}
+        <StyledImage
+          src={imageUrl}
+          alt={currentItem.name}
+          onLoad={() => setLoaded(true)}
+        />
+      </StyledImageWrapper>
+
       <Box>
         <Typography mb={2} variant="h4">
           {currentItem.name}
@@ -47,7 +58,10 @@ const StyledWrapper = styled(Box)({
 });
 
 const StyledImage = styled("img")({
+  objectFit: "scale-down",
+});
+
+const StyledImageWrapper = styled(Box)({
   width: 500,
   height: 500,
-  objectFit: "scale-down",
 });

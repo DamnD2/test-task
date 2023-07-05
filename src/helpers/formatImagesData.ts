@@ -14,3 +14,5 @@ export const formatImagesData = (items: JsonPlaceholderItem[]): ItemData[] =>
     description: item.title,
     url: item.url.replace("600", "250"), // change images size
   }));
+
+export const skeletonArray = new Array(20).fill("any data");
