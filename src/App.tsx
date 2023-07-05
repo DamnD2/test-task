@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { formatImagesData } from "helpers/formatImagesData";
 import { ItemData } from "types";
+import { Box, Typography } from "@mui/material";
 
 function App() {
   const [data, setData] = useState<ItemData[]>([]);
@@ -12,9 +13,10 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <Box>
+      <Typography>Page title</Typography>
       <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+    </Box>
   );
 }
 
