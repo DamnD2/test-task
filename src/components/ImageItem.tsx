@@ -1,5 +1,6 @@
-import { Box, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { ItemData } from "types";
 
 interface ImageItemProps {
@@ -8,7 +9,7 @@ interface ImageItemProps {
 
 const ImageItem: FC<ImageItemProps> = ({ item }) => {
   return (
-    <STyledItemWrapper>
+    <STyledItemWrapper to={`details/${item.name}`}>
       <StyledImage src={item.url} alt={item.name} />
       <StyledName>{item.name}</StyledName>
     </STyledItemWrapper>
@@ -17,11 +18,10 @@ const ImageItem: FC<ImageItemProps> = ({ item }) => {
 
 export default ImageItem;
 
-const STyledItemWrapper = styled(Box)({
+const STyledItemWrapper = styled(Link)({
   padding: 10,
-  "&:hover": {
-    cursor: "pointer",
-  },
+  textDecoration: "none",
+  color: "#000",
 });
 
 const StyledImage = styled("img")({
