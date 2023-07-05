@@ -10,7 +10,7 @@ export interface JsonPlaceholderItem {
 
 export const formatImagesData = (items: JsonPlaceholderItem[]): ItemData[] =>
   items.map((item) => ({
-    name: item.title.replace(/ .*/, ""),
+    name: `${item.title.replace(/ .*/, "")} ${item.id}`, // id for name uniqueness
     description: item.title,
-    url: item.url,
+    url: item.url.replace("600", "250"), // change images size
   }));
