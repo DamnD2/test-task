@@ -1,5 +1,4 @@
-import { Typography, styled } from "@mui/material";
-import { Box } from "@mui/system";
+import { Typography, styled, Box } from "@mui/material";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 

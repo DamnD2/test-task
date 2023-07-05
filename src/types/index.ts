@@ -3,3 +3,8 @@ export interface ItemData {
   description: string;
   url: string;
 }
+
+export interface CommentsItem {
+  imageName: string;
+  comments: string[];
+}

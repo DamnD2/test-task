@@ -5,6 +5,7 @@ import ImagesContextProvider from "contexts/ImagesContextProvider";
 
 import "./index.css";
 import App from "./App";
+import CommentsContextProvider from "contexts/CommentsProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,9 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ImagesContextProvider>
-      <Router>
-        <App />
-      </Router>
+      <CommentsContextProvider>
+        <Router>
+          <App />
+        </Router>
+      </CommentsContextProvider>
     </ImagesContextProvider>
   </React.StrictMode>
 );
