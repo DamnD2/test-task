@@ -21,7 +21,7 @@ const ImageInfoPage: FC = () => {
   );
 
   if (!currentItem) {
-    redirect("/");
+    redirect("/test-task");
   }
 
   return !!currentItem ? (
